@@ -11,12 +11,29 @@ public class Minion {
 		this.master = master;
 		
 	}
-	public void Name() {
-		getName();
+	public void setName(String name) { //setter
+		this.name = name;
 	}
-	public void Eyes() {
-		
+	public String getName() { //getter
+		return name;
 	}
-	
+	public void setEyes(int eyes) {
+		this.eyes = eyes;
+	}
+	public int getEyes() {
+		return eyes;
+	}
+	public void setColor(String color) {
+		this.color = color;
+	}
+	public String getColor() {
+		return color;
+	}
+	public void setMaster(String master) {
+		this.master = master;
+	}
+	public String getMaster() {
+		return master;
+	}
 	
 }
