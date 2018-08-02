@@ -1,26 +1,40 @@
 import javax.swing.JOptionPane;
 
 public class Vault {
-	private int code = 1269;
-	public boolean tryCode(int code) {
-		String guess = JOptionPane.showInputDialog("Guess the four digit code");
-		int g = Integer.parseInt(guess);
+	private int code;
+	public Vault(int c) {
+		code = c;
+		
+	}
+	public boolean tryCode(int g) {
 		if (g == code) {
 			return true;
+			
 		}
 		else {
 		return false;
 		}
-	}
-	public static void main(String[] args) {
-		Vault vault = new Vault();
-		vault.tryCode(1269);
-	}
-public class James{
-	public int findCode(int code) {
 		
 	}
+	public static void main(String[] args) {
+		Vault vault = new Vault(54768);
+		//vault.tryCode(125);
+		James james = new James();
+		System.out.println(james.findCode(vault));
+	}
+	
 }
+class James{
+	public int findCode(Vault code) {
+		for (int i = 0; i < 1000001; i++) {	
+			if(code.tryCode(i)) {
+				return i;
+			}
+
+		}
+		return -1;
+	}
 	
 	
 }
+	
